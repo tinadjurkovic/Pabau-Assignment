@@ -7,7 +7,7 @@ body {
   margin: 0;
 }
 
-.login-container {
+.container {
   background-color: white;
   padding: 40px;
   border-radius: 10px;
@@ -30,6 +30,24 @@ h3 {
 .form-control {
   margin-bottom: 20px;
   border: 1px solid #e3e3e3;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+.select-control {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #e3e3e3;
+  border-radius: 5px;
+}
+
+.select-control:focus {
+  border-color: #54b2d3;
+  outline: none;
 }
 
 .btn-primary {
@@ -39,6 +57,7 @@ h3 {
   color: white;
   font-size: 16px;
   padding: 12px;
+  border-radius: 5px;
 }
 
 .btn-primary:hover {
