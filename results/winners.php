@@ -52,7 +52,7 @@ foreach ($categories as $category) {
                 <a class="nav-link" href="voters.php">Voters</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="logout.php">Logout</a>
+                <a class="nav-link" href="../login-logout-logic/logout.php">Logout</a>
             </li>
         </ul>
     </nav>
