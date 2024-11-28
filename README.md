@@ -12,7 +12,7 @@ To run and test the code on your local machine, ensure you have the following in
 
 ### 3. XAMPP
 
-### Additionally, make sure you have a web browser to test the front-end interface.
+#### Additionally, make sure you have a web browser to test the front-end interface.
 
 ## Setup Instructions
 
@@ -54,7 +54,7 @@ Your vote will be saved in the database.
 
 ## Generate Certificates:
 
-After votes are tallied, go to the winners.php page to view the winners.
+After votes are tallied, you can click on voters and see the voters who voted the most often in descending order, or go to the winners.php page to view the winners.
 Click the "Get Certificate" button to generate and download the certificate for the winner.
 
 ## Logout:
