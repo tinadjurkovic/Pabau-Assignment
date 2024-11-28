@@ -47,16 +47,16 @@ http://localhost/Pabau-Assignment/index.php
 Open index.php in your browser.
 Enter your username and password (make sure you have an employee record in the database).
 
-## Vote:
+### Vote:
 
 After logging in, you'll be redirected to the voting page where you can vote for your colleagues in different categories.
 Your vote will be saved in the database.
 
-## Generate Certificates:
+### Generate Certificates:
 
 After votes are tallied, you can click on voters and see the voters who voted the most often in descending order, or go to the winners.php page to view the winners.
 Click the "Get Certificate" button to generate and download the certificate for the winner.
 
-## Logout:
+### Logout:
 
 Click on the logout link to log out of the system and return to the login page.
