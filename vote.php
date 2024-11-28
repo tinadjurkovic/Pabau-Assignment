@@ -1,7 +1,4 @@
 <?php
-ini_set('display_errors', 1);
-error_reporting(E_ALL);
-
 
 session_start();
 require_once 'config/database.php';
@@ -29,12 +26,26 @@ $employees = $stmt->fetchAll();
 </head>
 
 <body>
+    <nav class="navbar">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="winners.php">Winners</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="voters.php">Voters</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="logout.php">Logout</a>
+            </li>
+        </ul>
+    </nav>
+
     <div class="container">
         <h3 class="my-4">Vote for your Favorite Employee</h3>
 
         <form id="voteForm" action="vote_process.php" method="POST">
             <div class="mb-3">
-                <label for="category" class="form-label">Select Category</label>
+                <label for="category" class="form-label">Select a Category</label>
                 <select id="category" name="category_id" class="form-control select-control">
                     <option value="">Select a Category</option>
                     <?php foreach ($categories as $category): ?>
@@ -44,7 +55,7 @@ $employees = $stmt->fetchAll();
             </div>
 
             <div class="mb-3">
-                <label for="nominee" class="form-label">Select Nominee</label>
+                <label for="nominee" class="form-label">Select a Nominee</label>
                 <select id="nominee" name="nominee_id" class="form-control select-control">
                     <option value="">Select a Nominee</option>
                     <?php foreach ($employees as $employee): ?>
@@ -63,6 +74,8 @@ $employees = $stmt->fetchAll();
             <button type="submit" class="btn btn-primary">Submit Vote</button>
         </form>
     </div>
+
+
 
     <script>
         $(document).ready(function () {

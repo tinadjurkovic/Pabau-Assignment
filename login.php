@@ -15,7 +15,7 @@ session_start();
 </head>
 
 <body>
-    <div class="login-container">
+    <div class="container">
         <h3>Ready to appreciate your favorite employees?</h3>
 
         <?php if (!empty($_SESSION['errorMessage']['required'])): ?>
@@ -42,7 +42,7 @@ session_start();
                 <?php endif; ?>
             </div>
 
-            <button type="submit" class="btn btn-primary">Log In</button>
+            <button type="submit" class="btn-primary">Log In</button>
         </form>
     </div>
 
