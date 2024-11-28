@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once 'config/database.php';
+require_once '../config/database.php';
 
 $stmt = $db->prepare("
     SELECT e.firstname, e.lastname, COUNT(v.voter_id) AS votes_count
@@ -21,7 +21,7 @@ $voters = $stmt->fetchAll();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Voters</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="./styles/main.css" rel="stylesheet">
+    <link href="../styles/main.css" rel="stylesheet">
 </head>
 
 <body>

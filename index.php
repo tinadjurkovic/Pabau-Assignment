@@ -22,7 +22,7 @@ session_start();
             <div class="alert alert-danger"><?= $_SESSION['errorMessage']['required'] ?></div>
         <?php endif; ?>
 
-        <form action="login_process.php" method="POST">
+        <form action="./login-logout-logic/login_process.php" method="POST">
             <div class="mb-3">
                 <label for="username" class="form-label">Enter your username:</label>
                 <input id="username" name="username" type="text" class="form-control"

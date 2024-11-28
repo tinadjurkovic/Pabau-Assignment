@@ -1,5 +1,5 @@
 <?php
-require_once 'certificateGenerator.php';
+require_once './classes/certificateGenerator.php';
 
 if (isset($_GET['winner_name']) && isset($_GET['category']) && isset($_GET['votes'])) {
     $winnerName = $_GET['winner_name'];

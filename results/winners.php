@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once 'config/database.php';
+require_once '../config/database.php';
 
 $stmt = $db->query("SELECT * FROM categories");
 $categories = $stmt->fetchAll();
@@ -39,7 +39,7 @@ foreach ($categories as $category) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Winners</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="./styles/main.css" rel="stylesheet">
+    <link href="../styles/main.css" rel="stylesheet">
 </head>
 
 <body>
@@ -80,7 +80,7 @@ foreach ($categories as $category) {
                         <td>
                             <a style="color: black !important; text-decoration: none; font-weight: bold;"
                                 class="certificate-link" target="_blank"
-                                href="generate_certificate.php?winner_name=<?= urlencode($winner['name'] . ' ' . $winner['surname']) ?>&category=<?= urlencode($winner['category']) ?>&votes=<?= $winner['votes'] ?>">
+                                href="../bonus/generate_certificate.php?winner_name=<?= urlencode($winner['name'] . ' ' . $winner['surname']) ?>&category=<?= urlencode($winner['category']) ?>&votes=<?= $winner['votes'] ?>">
                                 Get the certificate
                             </a>
                         </td>

@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-require_once 'config/database.php';
+require_once '../config/database.php';
 
 $stmt = $db->query("SELECT * FROM categories");
 $categories = $stmt->fetchAll();
@@ -21,7 +21,7 @@ $employees = $stmt->fetchAll();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vote for Employee</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="./styles/main.css" rel="stylesheet">
+    <link href="../styles/main.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
@@ -29,13 +29,13 @@ $employees = $stmt->fetchAll();
     <nav class="navbar">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="winners.php">Winners</a>
+                <a class="nav-link" href="../results/winners.php">Winners</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="voters.php">Voters</a>
+                <a class="nav-link" href="../results/voters.php">Voters</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="logout.php">Logout</a>
+                <a class="nav-link" href="../login-logout-logic/logout.php">Logout</a>
             </li>
         </ul>
     </nav>

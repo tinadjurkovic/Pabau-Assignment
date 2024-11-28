@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-require_once 'config/database.php';
+require_once '../config/database.php';
 
 $errors = [
     'required' => 'Both fields are required.',
@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if (empty($username) || empty($password)) {
         $_SESSION['errorMessage']['required'] = $errors['required'];
-        header('Location: login.php');
+        header('Location: ../index.php');
         exit;
     }
 
@@ -30,19 +30,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['username'] = $user['username'];
             unset($_SESSION['errorMessage']);
-            header('Location: vote.php');
+            header('Location: ../voting-logic/vote.php');
             exit;
         } else {
             $_SESSION['errorMessage']['password'] = $errors['invalidPassword'];
-            header('Location: login.php');
+            header('Location: ../index.php');
             exit;
         }
     } else {
         $_SESSION['errorMessage']['invalidCredentials'] = $errors['invalidCredentials'];
-        header('Location: login.php');
+        header('Location: ../index.php');
         exit;
     }
 }
 
-header('Location: login.php');
+header('Location: ../index.php');
 exit;
