@@ -8,7 +8,7 @@ $categories = $stmt->fetchAll();
 $winners = [];
 foreach ($categories as $category) {
     $stmt = $db->prepare("
-        SELECT e.firstname, e.lastname, COUNT(v.id) as votes
+        SELECT e.firstname, e.lastname, COUNT(v.id) as votes, e.id as winner_id
         FROM employees e
         JOIN votes v ON e.id = v.nominee_id
         WHERE v.category_id = :category_id
@@ -20,10 +20,12 @@ foreach ($categories as $category) {
     $winner = $stmt->fetch();
 
     if ($winner) {
-        $winners[$category['name']] = [
+        $winners[] = [
             'name' => $winner['firstname'],
             'surname' => $winner['lastname'],
-            'votes' => $winner['votes']
+            'votes' => $winner['votes'],
+            'category' => $category['name'],
+            'winner_id' => $winner['winner_id']
         ];
     }
 }
@@ -55,23 +57,33 @@ foreach ($categories as $category) {
         </ul>
     </nav>
 
-    <div class="container">
+    <div class="container container-winners">
         <h4 class="my-4 text-center">Winners for Each Category</h4>
 
         <table class="table table-bordered text-center">
             <thead>
                 <tr>
                     <th>Category</th>
-                    <th>Winner</th>
+                    <th>Name</th>
+                    <th>Surname</th>
                     <th>Votes</th>
+                    <th>Certificates</th>
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($winners as $categoryName => $winner): ?>
+                <?php foreach ($winners as $winner): ?>
                     <tr>
-                        <td><?= htmlspecialchars($categoryName) ?></td>
-                        <td><?= htmlspecialchars($winner['name'] . ' ' . $winner['surname']) ?></td>
-                        <td><?= htmlspecialchars($winner['votes']) ?></td>
+                        <td><?= htmlspecialchars($winner['category']) ?></td>
+                        <td><?= htmlspecialchars($winner['name']) ?></td>
+                        <td><?= htmlspecialchars($winner['surname']) ?></td>
+                        <td><?= $winner['votes'] ?></td>
+                        <td>
+                            <a style="color: black !important; text-decoration: none; font-weight: bold;"
+                                class="certificate-link" target="_blank"
+                                href="generate_certificate.php?winner_name=<?= urlencode($winner['name'] . ' ' . $winner['surname']) ?>&category=<?= urlencode($winner['category']) ?>&votes=<?= $winner['votes'] ?>">
+                                Get the certificate
+                            </a>
+                        </td>
                     </tr>
                 <?php endforeach; ?>
             </tbody>

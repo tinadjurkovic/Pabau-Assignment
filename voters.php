@@ -31,7 +31,7 @@ $voters = $stmt->fetchAll();
                 <a class="nav-link" href="winners.php">Winners</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="voters.php">Voters</a>
+                <a class="nav-link active" href="voters.php">Voters</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="logout.php">Logout</a>
@@ -41,7 +41,7 @@ $voters = $stmt->fetchAll();
 
     <div class="container">
         <h3 class="my-4">Top Voters</h3>
-        <table class="table table-bordered">
+        <table class="table table-bordered text-center">
             <thead>
                 <tr>
                     <th>Name</th>

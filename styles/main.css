@@ -52,6 +52,10 @@ body {
   margin: 120px auto;
 }
 
+.container-winners {
+  max-width: 1000px !important;
+}
+
 h3 {
   text-align: center;
   margin-bottom: 30px;
@@ -98,4 +102,15 @@ h3 {
 
 .btn-primary:hover {
   background-color: #48a3c0;
+}
+
+.certificate-link {
+  color: black !important;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.certificate-link:hover {
+  color: grey;
+  text-decoration: none;
 }
